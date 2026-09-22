@@ -1,0 +1,19 @@
+HOSTINGER DEPLOY — fix 403 and block .env
+============================================
+
+After uploading from this project, do these 3 steps in hPanel File Manager:
+
+1. DELETE this file if it exists:
+   public_html/index.php
+   (Keep ONLY public_html/public/index.php)
+
+2. Upload/replace these two files:
+   - Project .htaccess        -> public_html/.htaccess
+   - public/.htaccess         -> public_html/public/.htaccess
+
+3. Test in your browser:
+   - https://redempmedsupplies.com/        should load the welcome page
+   - https://redempmedsupplies.com/.env    should show 403 Forbidden
+
+Optional (more secure): move public_html/.env to the folder ABOVE public_html
+and update DB credentials if .env was ever reachable in the browser.

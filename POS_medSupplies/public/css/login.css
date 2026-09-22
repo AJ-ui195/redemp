@@ -1,0 +1,253 @@
+/* Center wrapper */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #1a237e url("/public/images/Welcomepage.png") no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center;     /* Center vertically */
+    height: 100vh;
+    padding: 20px; /* Equal padding on all sides */
+    position: relative; /* For absolute positioning of logo */
+}
+
+/* Logo in top left */
+.login-logo {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+}
+
+.login-logo .logo-img {
+    max-height: 60px;
+    width: auto;
+    object-fit: contain;
+    background: transparent;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+/* Right side animated banner */
+.login-banner {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-left: 24px;
+    padding-right: 40px;
+}
+
+.login-banner .brand-text {
+    color: #ffffff;
+    font-size: 40px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    animation: floatY 4s ease-in-out infinite, fadeSlideIn 0.8s ease-out both;
+    white-space: nowrap;
+    will-change: transform, text-shadow;
+}
+
+@keyframes floatY {
+    0% {
+        transform: translateY(12px);
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+    50% {
+        transform: translateY(-12px);
+        text-shadow: 0 8px 24px rgba(0, 0, 0, 0.45);
+    }
+    100% {
+        transform: translateY(12px);
+        text-shadow: 0 4px 16px rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes fadeSlideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Hide banner on small screens */
+@media (max-width: 768px) {
+    .login-banner { display: none; }
+}
+
+/* Wrapper for positioning */
+.login-wrapper {
+    width: 100%;
+    max-width: 650px; /* Bigger card */
+    padding: 40px;    /* More spacing inside */
+}
+
+/* Card design */
+.card {
+    background: rgba(255, 255, 255, 0.15); /* Glass effect background */
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+}
+
+/* Card header */
+.card-header {
+    background: transparent; /* Transparent header */
+    color: #ffffff;
+    text-align: left; /* Align header text to left to match layout */
+    font-size: 24px; /* Bigger title */
+    font-weight: 700;
+    padding: 0 0 16px 0; /* Tighter spacing without colored bar */
+}
+
+/* Card body */
+.card-body {
+    padding: 35px; /* More padding inside */
+    color: #ffffff; /* Improve default text contrast on glass */
+}
+
+/* Fine tune vertical rhythm inside the card */
+.card-body .text-center.mb-3 {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+.form-group label {
+    font-weight: 600;
+    font-size: 16px; /* Bigger labels */
+    display: block;
+    margin-bottom: 8px;
+    color: #ffffff; /* High-contrast labels */
+}
+
+/* Input fields */
+.form-control {
+    width: 100%;
+    padding: 14px; /* Taller input */
+    border: 1px solid rgba(206, 212, 218, 0.7);
+    border-radius: 8px;
+    font-size: 16px;
+    background-color: rgba(255, 255, 255, 0.85);
+    color: #1f2937; /* Dark text inside light input bg */
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Placeholder color for readability */
+.form-control::placeholder {
+    color: rgba(31, 41, 55, 0.7);
+}
+
+/* Input group styling (icons + toggle) */
+.input-group .input-group-text {
+    background: rgba(248, 249, 250, 0.85);
+    border: 1px solid rgba(206, 212, 218, 0.7);
+    border-right: 0;
+    color: #2b2f33; /* Darker for contrast against light background */
+}
+
+.input-group .form-control {
+    border-left: 0; /* Seamless join with icon */
+}
+
+.input-group:focus-within .input-group-text {
+    border-color: #007bff;
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Password toggle button to match input height */
+.input-group #togglePassword {
+    border-color: #ced4da;
+    color: #6c757d;
+}
+
+.input-group #togglePassword:hover {
+    background: #f8f9fa;
+    color: #495057;
+}
+
+.input-group #togglePassword:focus {
+    box-shadow: 0 0 6px rgba(0, 123, 255, 0.2);
+}
+
+/* Error messages */
+.error-text {
+    font-size: 14px;
+    color: #dc3545;
+    margin-top: 5px;
+    display: block;
+}
+
+/* Button */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 15px; /* Taller button */
+    border-radius: 8px;
+    font-size: 18px; /* Bigger text */
+    font-weight: 600;
+    color: white;
+    transition: background 0.3s ease;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+    cursor: pointer;
+}
+
+/* Link and helper text tweaks */
+.btn-link {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.btn-link:hover {
+    text-decoration: underline;
+    color: #ffffff;
+}
+
+/* Improve visibility of welcome texts overriding inline styles */
+.login-wrapper .card-body .text-center div:first-child {
+    color: #ffffff !important;
+}
+.login-wrapper .card-body .text-center div:last-child {
+    color: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Utility spacing */
+.mt-3 {
+    margin-top: 18px;
+}
+.mt-4 {
+    margin-top: 25px;
+}
+
+/* Small screens adjustments */
+@media (max-width: 576px) {
+    .login-wrapper {
+        padding: 20px;
+    }
+    .card-body {
+        padding: 22px;
+    }
+    .login-logo {
+        top: 15px;
+        left: 15px;
+    }
+    .login-logo .logo-img {
+        max-height: 45px;
+    }
+}
